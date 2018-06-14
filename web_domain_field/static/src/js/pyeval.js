@@ -1,8 +1,10 @@
-odoo.define('web.domain_field', function (require) {
+openerp.web_domain_field = function (instance){
 "use strict";
 
-var pyeval = require('web.pyeval');
-var session = require('web.session');
+// var pyeval = require('web.pyeval');
+var pyeval = instance.web.pyeval;
+// var session = require('web.session');
+var session = instance.session;
 
 
 var original_pyeval = pyeval.eval;
@@ -230,4 +232,4 @@ pyeval.eval = domain_field_pyeval;
 pyeval.ensure_evaluated = ensure_evaluated;
 pyeval.sync_eval_domains_and_contexts = sync_eval_domains_and_contexts;
 
-});
+};
